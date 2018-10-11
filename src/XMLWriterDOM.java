@@ -43,7 +43,7 @@ public class XMLWriterDOM {
                 //for output to file, console
                 TransformerFactory transformerFactory = TransformerFactory.newInstance();
                 Transformer transformer = transformerFactory.newTransformer();
-                //for pretty print
+                //
                 transformer.setOutputProperty(OutputKeys.INDENT, "yes");
                 DOMSource source = new DOMSource(doc);
 
@@ -69,7 +69,7 @@ public class XMLWriterDOM {
             //set id attribute
             employee.setAttribute("id", id);
 
-            //create name element
+            //create lastname element
             employee.appendChild(getEmployeeElements(doc, employee, "lastName", lastName));
 
             employee.appendChild(getEmployeeElements(doc, employee, "name", name));
@@ -77,11 +77,11 @@ public class XMLWriterDOM {
             //create age element
             employee.appendChild(getEmployeeElements(doc, employee, "age", age));
 
-            //create role element
+            //create telephoneNumber element
             employee.appendChild(getEmployeeElements(doc, employee, "telephoneNumber", telephoneNumber));
 
-            //create gender element
-            employee.appendChild(getEmployeeElements(doc, employee, "gender", manager));
+            //create manager element
+            employee.appendChild(getEmployeeElements(doc, employee, "manager", manager));
 
             return employee;
         }
